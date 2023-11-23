@@ -40,6 +40,27 @@ module.exports = {
       } catch (err){
         console.error(err);
       }
+    }else if(interaction.type == InteractionType.ModalSubmit){
+      const {modals} = client;
+      const {customId} = interaction;
+      const modal = modals.get(customId);
+      if(!modal) return new Error('there is no modal with that custom id!');
+
+      try{
+        await modal.execute(interaction, client);
+      } catch (err){
+        console.error(err);
+      }
+    }else if(interaction.isSelectMenu()){
+      const { selectMenus } = client;
+      const { customId } = interaction;
+      const { menu } = selectMenus.get(customId);
+      if(!menu) return new Error('there is no select menu with that custom id!');
+      try{
+        await menu.execute(interaction, client);
+      } catch (err){
+        console.error(err);
+      }
     }
   },
 };
