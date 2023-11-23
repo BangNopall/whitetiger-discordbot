@@ -8,7 +8,7 @@ module.exports = {
       const { commandName } = interaction;
       const command = commands.get(commandName);
       if (!command) return;
-
+      const test = "kontol";
       try {
         await command.execute(interaction, client);
       } catch (error) {
