@@ -5,7 +5,7 @@ module.exports = (client) => {
     const options = [
       {
         type: ActivityType.Watching,
-        text: "White Tiger Pandawa",
+        text: "White Tiger Sadulur",
         status: "online",
       },
       {

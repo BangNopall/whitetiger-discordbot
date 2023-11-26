@@ -3,9 +3,8 @@ module.exports = {
         name: 'jabatanmenu',
     },
     async execute(interaction, client) {
-        console.log(interaction);
         await interaction.reply({
-            content: `You select: `
+            content: `You select: ${interaction.values[0]}`
         });
     }
 }

@@ -13,7 +13,7 @@ module.exports = {
     const button = new ButtonBuilder()
       .setLabel(`Masuk Kota!`)
       .setStyle(ButtonStyle.Link)
-      .setURL(`https://cfx.re/join/jklyam`);
+      .setURL(`https://cfx.re/join/zzgj99`);
 
     if (interaction.member.roles.cache.has("1155443652911452252")) {
       await interaction.reply({

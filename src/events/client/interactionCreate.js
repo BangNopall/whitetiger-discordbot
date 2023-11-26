@@ -8,7 +8,7 @@ module.exports = {
       const { commandName } = interaction;
       const command = commands.get(commandName);
       if (!command) return;
-      const test = "kontol";
+
       try {
         await command.execute(interaction, client);
       } catch (error) {
@@ -51,16 +51,7 @@ module.exports = {
       } catch (err){
         console.error(err);
       }
-    }else if(interaction.isSelectMenu()){
-      const { selectMenus } = client;
-      const { customId } = interaction;
-      const { menu } = selectMenus.get(customId);
-      if(!menu) return new Error('there is no select menu with that custom id!');
-      try{
-        await menu.execute(interaction, client);
-      } catch (err){
-        console.error(err);
-      }
+
     }
   },
 };
