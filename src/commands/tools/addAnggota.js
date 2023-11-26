@@ -127,7 +127,6 @@ module.exports = {
         componentType: ComponentType.StringSelect,
         filter: (i) =>
           i.user.id === interaction.user.id && i.customId === interaction.id,
-        time: 60_000, // Optional: Set a timeout for the collector
       });
 
       collector.on("collect", async (interaction) => {
