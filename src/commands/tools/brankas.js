@@ -8,12 +8,21 @@ module.exports = {
     .setDescription("Brankas White Tiger Sadulur"),
   async execute(interaction, client) {
     if (interaction.member.roles.cache.has("1177816855285600296")) {
-      // yang diperbolehkan hanya role dengan id tertentu
-      let brankasData = await Brankas.findOne();
+      // Mengambil nama2 barang dengan kategori barang disanker dan di looping datanya di embed untuk ditampilkan
+        const disnakerArray = await Brankas.find({kategori: "Barang Disnaker" });
+        const barhamArray = await Brankas.find({kategori: "Barang Haram" });
+        const senjataArray = await Brankas.find({kategori: "Senjata" });
+        const peluruArray = await Brankas.find({kategori: "Peluru" });
+
+        const disnakerList = disnakerArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
+        const barhamList = barhamArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
+        const senjataList = senjataArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
+        const peluruList = peluruArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
+
       const embed = new EmbedBuilder()
         .setTitle("Brankas - White Tiger Sadulur")
         .setDescription(
-          `> **Barang Disnaker**\n> - AXE : ${brankasData.axe}\n> - AYAM POTONG : ${brankasData.ayampotong}\n> - BAJU : ${brankasData.baju}\n> - BATU : ${brankasData.batu}\n> - BENANG : ${brankasData.benang}\n> - BULU AYAM : ${brankasData.buluayam}\n> - DIAMOND : ${brankasData.diamond}\n> - DOMPET : ${brankasData.dompet}\n> - GOLD : ${brankasData.gold}\n> - IRON : ${brankasData.iron}\n> - KAIN : ${brankasData.kain}\n> - KEMASA AYAM : ${brankasData.kemasanayam}\n> - MAP DOKUMEN : ${brankasData.mapdokumen}\n> - OBAT STRESS : ${brankasData.obatstress}\n> - PECAHAN BATU : ${brankasData.pecahanbatu}\n> - PERBAN : ${brankasData.perban}\n> - PHONE : ${brankasData.phone}\n> - RADIO : ${brankasData.radio}\n> - SAKURA TEA : ${brankasData.sakuratea}\n> - SKATEBOARD : ${brankasData.skateboard}\n> - TEMBAGA : ${brankasData.tembaga}\n> - UDON : ${brankasData.udon}\n\n> **Barang Haram**\n> - ADVANCED LOCKPICK : ${brankasData.advancedlockpick}\n> - ALUMUNIUM : ${brankasData.alumunium}\n> - JOINT : ${brankasData.joint}\n> - KECUBUNG : ${brankasData.kecubung}\n> - LOCKPICK : ${brankasData.lockpick}\n> - METH : ${brankasData.meth}\n> - OLAHAN KECUBUNG : ${brankasData.olahankecubung}\n> - PAKET METH : ${brankasData.paketmeth}\n> - TOOLKIT SENJATA : ${brankasData.toolkitsenjata}\n> - VEST : ${brankasData.vest}\n\n> **Senjata**\n> - AK-47 :${brankasData.ak47}\n> - DE : ${brankasData.de}\n> - HEAVY SNIPER : ${brankasData.heavysniper}\n> - KNIFE : ${brankasData.knife}\n> - MACHETE : ${brankasData.machete}\n> - MINI SMG : ${brankasData.minismg}\n> - PYTHON : ${brankasData.python}\n> - TECH-9 : ${brankasData.tech9}\n\n> **Peluru**\n> - .44 MAGNUM : ${brankasData.pelurumagnum}\n> - .45 ACP : ${brankasData.peluruacp}\n> - .50 AE : ${brankasData.peluruae}\n> - .50 BMG : ${brankasData.pelurubmg}\n> - 5.56 : ${brankasData.pelurulimalimaenam}\n> - 9MM : ${brankasData.pelurusembilanmm}`
+          '> **Barang Disnaker**\n'+`${disnakerList || '> Tidak Ada Barang'}`+'\n\n> **Barang Haram**\n'+`${barhamList || '> Tidak Ada Barang'}`+'\n\n> **Senjata**\n'+`${senjataList || '> Tidak Ada Barang'}`+'\n\n> **Peluru**\n'+`${peluruList || '> Tidak Ada Barang'}`+''
         )
         .setColor("ffffff")
         .setThumbnail(

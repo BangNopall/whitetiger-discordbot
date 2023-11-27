@@ -70,7 +70,7 @@ module.exports = {
         })
       );
       const menu = new StringSelectMenuBuilder()
-        .setCustomId(interaction.id)
+        .setCustomId('posisi')
         .setPlaceholder("Pilih posisi anggota")
         .setOptions(
           new StringSelectMenuOptionBuilder()
@@ -126,7 +126,7 @@ module.exports = {
       const collector = response.createMessageComponentCollector({
         componentType: ComponentType.StringSelect,
         filter: (i) =>
-          i.user.id === interaction.user.id && i.customId === interaction.id,
+          i.user.id === interaction.user.id && i.customId === 'posisi',
       });
 
       collector.on("collect", async (interaction) => {
@@ -139,7 +139,6 @@ module.exports = {
             await message.delete();
           }
         });
-
         // Melakukan perintah ketika menu di pilih
         if (interaction.member.roles.cache.has("1155443652911452252")) {
           switch (selectedOption) {
