@@ -34,7 +34,6 @@ module.exports = {
   },
 
   async execute(interaction, client) {
-    if (interaction.member.roles.cache.has("1177816855285600296")) {
       let barang = interaction.options.getString("barang");
       let jumlah = interaction.options.getString("jumlah");
 
@@ -92,11 +91,5 @@ module.exports = {
           content: `Terjadi kesalahan saat melakukan deposit!`,
         });
       }
-    } else {
-      return interaction.reply({
-        content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini. Perintah ini masih dalam tahap pengembangan`,
-        ephemeral: true,
-      });
-    }
   },
 };
