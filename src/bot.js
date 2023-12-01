@@ -2,13 +2,20 @@ require("dotenv").config();
 const { token, databaseToken } = process.env;
 const { connect } = require("mongoose");
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
+const {Player} = require("discord-player");
 const fs = require("fs");
 
-const client = new Client({ intents: GatewayIntentBits.Guilds });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
 client.commands = new Collection();
 client.buttons = new Collection();
 client.modals = new Collection();
 client.selectMenus = new Collection();
+client.player = new Player(client, {
+  ytdlOptions: {
+    quality: "highestaudio",
+    highWaterMark: 1 << 25,
+  }
+});
 client.commandArray = [];
 
 const functionFolders = fs.readdirSync("./src/functions");

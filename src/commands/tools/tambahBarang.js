@@ -76,7 +76,7 @@ module.exports = {
 
       const embed = new EmbedBuilder()
           .setDescription(
-            `> **${barang}** berhasil ditambahkan ke daftar item **${kategori}**`
+            `> **${barang}** berhasil ditambahkan ke daftar item brankas`
           );
 
         if (interaction.member.roles.cache.has("1155443652911452252")) {
