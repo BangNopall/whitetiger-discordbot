@@ -8,7 +8,7 @@ module.exports = {
         // yang diperbolehkan hanya role dengan id tertentu
         const embed = new EmbedBuilder()
         .setTitle("Commmand Bot - White Tiger Sadulur")
-        .setDescription("> Gunakan aplication command atau prefix dengan ``slash atau (/)`` untuk memulai perintah.\n\n> **General Command**\n> - ``/help``\n> - ``/wtksrp``\n> - ``/wtgg``\n> - ``/kota``\n\n> **WT Sadulur Command**\n> - ``/keuangan``\n> - ``/brankas``\n> - ``/dp-brankas``\n> - ``/wd-brankas``\n> - ``/dp-uangputih``\n> - ``/wd-uangputih``\n> - ``/dp-uangmerah``\n> - ``/wd-uangmerah``\n> - ``/anggota-info``\n> - ``/keanggotaan``\n> - ``/tambah-barang``\n> - ``/hapus-barang``")
+        .setDescription("> Gunakan aplication command atau prefix dengan ``slash atau (/)`` untuk memulai perintah.\n\n> **General Command**\n> - ``/help``\n> - ``/wtksrp``\n> - ``/wtgg``\n> - ``/kota``\n\n> **WT Sadulur Command**\n> - ``/keuangan``\n> - ``/brankas``\n> - ``/dp-brankas``\n> - ``/wd-brankas``\n> - ``/dp-uangputih``\n> - ``/wd-uangputih``\n> - ``/dp-uangmerah``\n> - ``/wd-uangmerah``\n> - ``/anggota-info``\n> - ``/keanggotaan``\n> - ``/tambah-barang``\n> - ``/hapus-barang``\n\n> **Music Player Command**\n> - ``/play``\n> - ``/resume``\n> - ``/pause``\n> - ``/skip``\n> - ``/queue``\n> - ``/exit``")
         .setColor("ffffff")
         .setThumbnail("https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&")
         .setTimestamp(Date.now())

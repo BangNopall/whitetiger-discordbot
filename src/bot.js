@@ -10,13 +10,9 @@ client.commands = new Collection();
 client.buttons = new Collection();
 client.modals = new Collection();
 client.selectMenus = new Collection();
-client.player = new Player(client, {
-  ytdlOptions: {
-    quality: "highestaudio",
-    highWaterMark: 1 << 25,
-  }
-});
+client.player = new Player(client);
 client.commandArray = [];
+client.player.extractors.loadDefault();
 
 const functionFolders = fs.readdirSync("./src/functions");
 for (const folder of functionFolders) {
