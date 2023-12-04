@@ -21,9 +21,9 @@ module.exports = {
 		)
 		.addSubcommand(subcommand =>
 			subcommand
-				.setName("song")
-				.setDescription("Mainkan single lagu dari Youtube")
-				.addStringOption(option => option.setName("url").setDescription("Link lagu youtube").setRequired(true))
+				.setName("lagu")
+				.setDescription("Mainkan musik dengan link youtube")
+				.addStringOption(option => option.setName("url").setDescription("Link musik youtube").setRequired(true))
 		),
     async execute(interaction, client) {
         const player = useMainPlayer();

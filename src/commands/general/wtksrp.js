@@ -8,7 +8,7 @@ module.exports = {
         // yang diperbolehkan hanya role dengan id tertentu
         const embed = new EmbedBuilder()
         .setTitle("White Tiger - Sadulur")
-        .setDescription('WT-KSRP Adalah discord bot official dari White Tiger Sadulur yang dikembangkan oleh Noxvall (Demon Jaffa). Memberikan kemudahan untuk mengelola dan mengatur berbagai menejemen kota dengan berbagai command.')
+        .setDescription('WT-KSRP Adalah discord bot official dari White Tiger Sadulur yang dikembangkan oleh Noxvall <@685664045172654082>. Memberikan kemudahan untuk mengelola dan mengatur berbagai menejemen kota dengan berbagai command.')
         .setColor("ffffff")
         .setThumbnail("https://media.discordapp.net/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=657ec15a&is=656c4c5a&hm=d1772ffb0b014d7169dec2f63d9dcb0fbf9a0a7dcede8fbe145b471607ee890d&=&format=webp&quality=lossless&width=662&height=662")
         .setTimestamp(Date.now())
