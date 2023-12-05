@@ -4,7 +4,7 @@ const { QueryType, useMainPlayer } = require('discord-player');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("queue")
-        .setDescription("Melihat 10 antrian lagu"),
+        .setDescription("Daftar 10 antrian lagu"),
 
     async execute(interaction, client) {
         const player = useMainPlayer();
@@ -13,7 +13,18 @@ module.exports = {
 
 		if (!queue || !queue.node.isPlaying)
 		{
-			await interaction.reply("There are no songs in the queue")
+			await interaction.reply({
+                embeds: [ new EmbedBuilder()
+                    .setTitle('Musik Player - White Tiger Sadulur')
+                    .setDescription(`> Tidak ada lagu dalam antrian`)
+                    .setColor("ffffff")
+                    .setTimestamp(Date.now())
+                    .setFooter({
+                        iconURL: "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
+                        text: "White Tiger Sadulur"
+                    })
+                ]
+            })
 			return;
 		}
 

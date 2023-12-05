@@ -1,7 +1,7 @@
 {
-  "name": "wtpdwbot",
-  "version": "1.2.1",
-  "description": "White Tiger Pandawa Discord Bot",
+  "name": "wtksbot",
+  "version": "1.2.2",
+  "description": "White Tiger Sadulur Discord Bot",
   "main": "src/bot.js",
   "scripts": {
     "test": "node .",

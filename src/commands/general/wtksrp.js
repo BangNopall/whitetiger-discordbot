@@ -22,7 +22,7 @@ module.exports = {
             { name: '> DC KSRP', value: '- [SadulurRP](https://discord.gg/sadulurrp)', inline: true },
             { name: '> DC WT', value: '- [WhiteTiger](https://discord.gg/whitetiger)', inline: true },
             { name: '> Ping', value: `- ${client.ws.ping} ms`, inline: true },
-            { name: '> Version', value: '- 1.2.1', inline: true },
+            { name: '> Version', value: '- 1.2.2', inline: true },
             { name: '> Prefix', value: '- /', inline: true },
         )
 

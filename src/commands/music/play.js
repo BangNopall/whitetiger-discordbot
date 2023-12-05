@@ -10,7 +10,7 @@ module.exports = {
 				.setName("search")
 				.setDescription("Cari lagu dan mainkan")
 				.addStringOption(option =>
-					option.setName("keywords").setDescription("Cari keywords").setRequired(true)
+					option.setName("keywords").setDescription("Ketik keywords atau link musik.").setRequired(true)
 				)
 		)
         .addSubcommand(subcommand =>
@@ -18,12 +18,6 @@ module.exports = {
 				.setName("playlist")
 				.setDescription("Mainkan playlist dari Youtube")
 				.addStringOption(option => option.setName("url").setDescription("Link playlist youtube").setRequired(true))
-		)
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName("lagu")
-				.setDescription("Mainkan musik dengan link youtube")
-				.addStringOption(option => option.setName("url").setDescription("Link musik youtube").setRequired(true))
 		),
     async execute(interaction, client) {
         const player = useMainPlayer();
@@ -43,41 +37,7 @@ module.exports = {
 
 		let embed = new EmbedBuilder()
 
-		if (interaction.options.getSubcommand() === "song") {
-            let url = interaction.options.getString("url")
-            
-            // Search for the song using the discord-player
-            const result = await player.search(url, {
-                requestedBy: interaction.user,
-                searchEngine: QueryType.YOUTUBE_VIDEO
-            })
-
-            // finish if no tracks were found
-            if (result.tracks.length === 0){
-                return interaction.reply({
-                    content: `Tidak ada hasil yang ditemukan`,
-                    ephemeral: true
-                })
-            };
-
-            // Add the track to the queue
-            const song = result.tracks[0]
-            queue.addTrack(song)
-            embed
-                .setTitle('Musik Player - White Tiger Sadulur')
-                .setDescription(`> Lagu berhasil ditambahkan ke dalam antrian\n\n> Judul : [${song.title}](${song.url})\n> Artist : ${song.author}\n> Durasi : ${song.duration}\n> Requested By : <@${song.requestedBy.id}>`)
-                .setThumbnail(`${playlist.thumbnail}`)
-                .setColor("ffffff")
-                .setTimestamp(Date.now())
-                .setFooter({
-                    iconURL: "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
-                    text: "White Tiger Sadulur"
-                })
-                .setDescription(`**[${song.title}](${song.url})** has been added to the Queue`)
-                .setThumbnail(song.thumbnail)
-                .setFooter({ text: `Duration: ${song.duration}`})
-
-		}else if (interaction.options.getSubcommand() === "playlist") {
+		if (interaction.options.getSubcommand() === "playlist") {
 
             // Search for the playlist using the discord-player
             let url = interaction.options.getString("url")
