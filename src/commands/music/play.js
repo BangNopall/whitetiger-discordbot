@@ -99,8 +99,6 @@ module.exports = {
       const song = result.tracks[0];
       queue.addTrack(song);
 
-      console.log(song);
-
       embed
         .setTitle("Musik Player - White Tiger Sadulur")
         .setDescription(

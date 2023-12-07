@@ -107,7 +107,7 @@ module.exports = {
         });
 
       if (interaction.member.roles.cache.has("1155443652911452252")) {
-        await interaction.editReply({
+        interaction.editReply({
           embeds: [updatedEmbed],
         });
       }
