@@ -48,25 +48,23 @@ module.exports = {
         });
       }
 
-      const embed = new EmbedBuilder()
-          .setDescription(
-            `> **${barang}** berhasil dihapus dari daftar item brankas`
-          );
+      const embed = new EmbedBuilder().setDescription(
+        `> **${barang}** berhasil dihapus dari daftar item brankas`
+      );
 
-        if (interaction.member.roles.cache.has("1155443652911452252")) {
-          await interaction.reply({
-            embeds: [embed],
-          });
-        } else {
-          await interaction.reply({
-            content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
-            ephemeral: true,
-          });
-        }
-
+      if (interaction.member.roles.cache.has("1155443652911452252")) {
+        await interaction.reply({
+          embeds: [embed],
+        });
+      } else {
+        await interaction.reply({
+          content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
+          ephemeral: true,
+        });
+      }
     } else {
       return interaction.reply({
-        content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini. Perintah ini masih dalam tahap pengembangan`,
+        content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini`,
         ephemeral: true,
       });
     }

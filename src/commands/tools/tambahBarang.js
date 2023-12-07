@@ -20,12 +20,7 @@ module.exports = {
 
   async autocomplete(interaction) {
     const focusedValue = interaction.options.getFocused();
-    const choices = [
-      "Barang Disnaker",
-      "Barang Haram",
-      "Senjata",
-      "Peluru",
-    ];
+    const choices = ["Barang Disnaker", "Barang Haram", "Senjata", "Peluru"];
     const filtered = choices
       .filter(
         (choice) =>
@@ -63,36 +58,30 @@ module.exports = {
         await newbarang.save();
         console.log("Data brankas berhasil disimpan ke database.");
       } catch (error) {
-        console.error(
-          "Gagal menyimpan data brankas ke database:",
-          error
-        );
+        console.error("Gagal menyimpan data brankas ke database:", error);
         return interaction.reply({
-          content:
-            "Terjadi kesalahan saat menyimpan data ke database.",
+          content: "Terjadi kesalahan saat menyimpan data ke database.",
           ephemeral: true,
         });
       }
 
-      const embed = new EmbedBuilder()
-          .setDescription(
-            `> **${barang}** berhasil ditambahkan ke daftar item brankas`
-          );
+      const embed = new EmbedBuilder().setDescription(
+        `> **${barang}** berhasil ditambahkan ke daftar item brankas`
+      );
 
-        if (interaction.member.roles.cache.has("1155443652911452252")) {
-          await interaction.reply({
-            embeds: [embed],
-          });
-        } else {
-          await interaction.reply({
-            content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
-            ephemeral: true,
-          });
-        }
-
+      if (interaction.member.roles.cache.has("1155443652911452252")) {
+        await interaction.reply({
+          embeds: [embed],
+        });
+      } else {
+        await interaction.reply({
+          content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
+          ephemeral: true,
+        });
+      }
     } else {
       return interaction.reply({
-        content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini. Perintah ini masih dalam tahap pengembangan`,
+        content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini`,
         ephemeral: true,
       });
     }

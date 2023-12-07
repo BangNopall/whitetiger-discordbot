@@ -70,15 +70,30 @@ module.exports = {
       const senjataArray = await Brankas.find({ kategori: "Senjata" });
       const peluruArray = await Brankas.find({ kategori: "Peluru" });
 
-      const disnakerList = disnakerArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
-      const barhamList = barhamArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
-      const senjataList = senjataArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
-      const peluruList = peluruArray.map((barang) => `> - ${barang.barang} : ${barang.jumlah}`).join("\n");
+      const disnakerList = disnakerArray
+        .map((barang) => `> - ${barang.barang} : ${barang.jumlah}`)
+        .join("\n");
+      const barhamList = barhamArray
+        .map((barang) => `> - ${barang.barang} : ${barang.jumlah}`)
+        .join("\n");
+      const senjataList = senjataArray
+        .map((barang) => `> - ${barang.barang} : ${barang.jumlah}`)
+        .join("\n");
+      const peluruList = peluruArray
+        .map((barang) => `> - ${barang.barang} : ${barang.jumlah}`)
+        .join("\n");
 
       const updatedEmbed = new EmbedBuilder()
         .setTitle("Brankas - White Tiger Sadulur")
         .setDescription(
-          '> **Barang Disnaker**\n' + `${disnakerList || '> Tidak Ada Barang'}` + '\n\n> **Barang Haram**\n' + `${barhamList || '> Tidak Ada Barang'}` + '\n\n> **Senjata**\n' + `${senjataList || '> Tidak Ada Barang'}` + '\n\n> **Peluru**\n' + `${peluruList || '> Tidak Ada Barang'}`
+          "> **Barang Disnaker**\n" +
+            `${disnakerList || "> Tidak Ada Barang"}` +
+            "\n\n> **Barang Haram**\n" +
+            `${barhamList || "> Tidak Ada Barang"}` +
+            "\n\n> **Senjata**\n" +
+            `${senjataList || "> Tidak Ada Barang"}` +
+            "\n\n> **Peluru**\n" +
+            `${peluruList || "> Tidak Ada Barang"}`
         )
         .setColor("ffffff")
         .setThumbnail(
@@ -86,7 +101,8 @@ module.exports = {
         )
         .setTimestamp(Date.now())
         .setFooter({
-          iconURL: "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
+          iconURL:
+            "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
           text: "White Tiger Sadulur • Updated setiap 1 menit",
         });
 
@@ -111,10 +127,12 @@ module.exports = {
 
     // Hapus interval ketika komando dihentikan
     interaction.client.on("interactionCreate", (newInteraction) => {
-      if (newInteraction.isCommand() && newInteraction.commandName === "brankas") {
+      if (
+        newInteraction.isCommand() &&
+        newInteraction.commandName === "brankas"
+      ) {
         clearInterval(intervalId);
       }
     });
-
   },
 };

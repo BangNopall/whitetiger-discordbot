@@ -10,12 +10,17 @@ module.exports = {
     .addStringOption((option) =>
       option
         .setName("barang")
-        .setDescription("Pilih barang yang akan di deposit (terdapat 47+ barang)")
+        .setDescription(
+          "Pilih barang yang akan di deposit (terdapat 47+ barang)"
+        )
         .setRequired(true)
         .setAutocomplete(true)
     )
     .addStringOption((option) =>
-      option.setName("jumlah").setDescription("Jumlah deposit barang").setRequired(true)
+      option
+        .setName("jumlah")
+        .setDescription("Jumlah deposit barang")
+        .setRequired(true)
     ),
 
   async autocomplete(interaction) {
@@ -34,62 +39,62 @@ module.exports = {
   },
 
   async execute(interaction, client) {
-      let barang = interaction.options.getString("barang");
-      let jumlah = interaction.options.getString("jumlah");
+    let barang = interaction.options.getString("barang");
+    let jumlah = interaction.options.getString("jumlah");
 
-      try {
-        // Cari data brankas di database
-        let brankasData = await Brankas.findOne({ barang: barang });
+    try {
+      // Cari data brankas di database
+      let brankasData = await Brankas.findOne({ barang: barang });
 
-        //   buatkan kondisi ketika barang tidak ditemukan atau tidak sesuai
-        if (!brankasData) {
-          return interaction.reply({
-            content: `Barang ${barang} tidak ditemukan di database.`,
-            ephemeral: true,
-          });
-        }
-
-        // tambahkan jumlah barang
-        brankasData.jumlah = parseInt(brankasData.jumlah) + parseInt(jumlah);
-        await brankasData.save();
-
-        console.log(brankasData);
-
-        const embed = new EmbedBuilder()
-          .setTitle("DP Brankas - White Tiger Sadulur")
-          .setDescription(
-            `> **Data Deposit Brankas**\n> - User: <@${interaction.user.id}> \n> - Barang : ${barang}\n> - Jumlah : ${jumlah}`
-          )
-          .setColor("ffffff")
-          .setThumbnail(
-            "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&"
-          )
-          .setTimestamp(Date.now())
-          .setFooter({
-            iconURL:
-              "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
-            text: "White Tiger Sadulur",
-          });
-
-        if (interaction.member.roles.cache.has("1155443652911452252")) {
-          await interaction.reply({
-            content: `Berhasil melakukan deposit ${jumlah} ${barang}`,
-            ephemeral: true,
-          });
-          await interaction.followUp({
-            embeds: [embed],
-          });
-        } else {
-          await interaction.reply({
-            content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
-            ephemeral: true,
-          });
-        }
-      } catch (error) {
-        console.error("Error during deposit: ", error);
-        await interaction.reply({
-          content: `Terjadi kesalahan saat melakukan deposit!`,
+      //   buatkan kondisi ketika barang tidak ditemukan atau tidak sesuai
+      if (!brankasData) {
+        return interaction.reply({
+          content: `Barang ${barang} tidak ditemukan di database.`,
+          ephemeral: true,
         });
       }
+
+      // tambahkan jumlah barang
+      brankasData.jumlah = parseInt(brankasData.jumlah) + parseInt(jumlah);
+      await brankasData.save();
+
+      console.log(brankasData);
+
+      const embed = new EmbedBuilder()
+        .setTitle("DP Brankas - White Tiger Sadulur")
+        .setDescription(
+          `> **Data Deposit Brankas**\n> - User: <@${interaction.user.id}> \n> - Barang : ${barang}\n> - Jumlah : ${jumlah}`
+        )
+        .setColor("ffffff")
+        .setThumbnail(
+          "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&"
+        )
+        .setTimestamp(Date.now())
+        .setFooter({
+          iconURL:
+            "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
+          text: "White Tiger Sadulur",
+        });
+
+      if (interaction.member.roles.cache.has("1155443652911452252")) {
+        await interaction.reply({
+          content: `Berhasil melakukan deposit ${jumlah} ${barang}`,
+          ephemeral: true,
+        });
+        await interaction.followUp({
+          embeds: [embed],
+        });
+      } else {
+        await interaction.reply({
+          content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
+          ephemeral: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error during deposit: ", error);
+      await interaction.reply({
+        content: `Terjadi kesalahan saat melakukan deposit!`,
+      });
+    }
   },
 };
