@@ -19,7 +19,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("tambah-anggota")
     .setDescription(
-      "Menambah anggota ke dalam daftar anggota White Tiger Pandawa"
+      "Menambah anggota ke dalam daftar anggota White Tiger Sadulur"
     ),
 
   async execute(interaction, client) {

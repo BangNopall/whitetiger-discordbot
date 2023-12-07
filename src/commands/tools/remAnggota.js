@@ -6,7 +6,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("hapus-anggota")
     .setDescription(
-      "Remove anggota ke dalam daftar anggota White Tiger Pandawa"
+      "Remove anggota ke dalam daftar anggota White Tiger Sadulur"
     )
     .addStringOption((option) =>
       option
