@@ -62,9 +62,7 @@ module.exports = {
       });
     }
 
-    const updateInterval = 60000; // 1 menit dalam milidetik
-
-    const updateMessage = async () => {
+    const interval = setInterval( async () => {
       const disnakerArray = await Brankas.find({ kategori: "Barang Disnaker" });
       const barhamArray = await Brankas.find({ kategori: "Barang Haram" });
       const senjataArray = await Brankas.find({ kategori: "Senjata" });
@@ -111,12 +109,7 @@ module.exports = {
           embeds: [updatedEmbed],
         });
       }
-    };
-
-    // Jalankan pertama kali dan kemudian set interval
-    await updateMessage();
-    const intervalId = setInterval(updateMessage, updateInterval);
-
+    }, 5000);
     // hanya role tertentu yang dapat mengakses
     if (!interaction.member.roles.cache.has("1155443652911452252")) {
       return interaction.reply({
@@ -124,15 +117,5 @@ module.exports = {
         ephemeral: true,
       });
     }
-
-    // Hapus interval ketika komando dihentikan
-    interaction.client.on("interactionCreate", (newInteraction) => {
-      if (
-        newInteraction.isCommand() &&
-        newInteraction.commandName === "brankas"
-      ) {
-        clearInterval(intervalId);
-      }
-    });
   },
 };

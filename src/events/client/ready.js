@@ -1,3 +1,7 @@
+const { Events } = require("discord.js");
+const Sticky = require("../../schemas/sticky");
+
+
 module.exports = {
     name : "ready",
     once : true,

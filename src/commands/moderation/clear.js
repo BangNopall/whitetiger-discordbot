@@ -49,7 +49,7 @@ module.exports = {
       if (ammout > channelMessages.size) ammout = channelMessages.size;
       const clearEmbed = new EmbedBuilder().setColor("White");
 
-      await interaction.deferReply({ ephemeral: true });
+      interaction.deferReply({ ephemeral: true });
 
       let messagesToDelete = [];
 

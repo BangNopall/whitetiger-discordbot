@@ -41,7 +41,7 @@ module.exports = {
           inline: true,
         },
         { name: "> Ping", value: `- ${client.ws.ping} ms`, inline: true },
-        { name: "> Version", value: "- 1.2.2", inline: true },
+        { name: "> Version", value: "- 1.2.3", inline: true },
         { name: "> Prefix", value: "- /", inline: true }
       );
 
