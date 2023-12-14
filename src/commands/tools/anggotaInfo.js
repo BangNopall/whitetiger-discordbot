@@ -59,7 +59,7 @@ module.exports = {
       const embed = new EmbedBuilder()
         .setTitle("Info Anggota - White Tiger Sadulur")
         .setDescription(
-          `Berikut adalah informasi anggota **${nama}**\nNama Ic : ${anggotaData.nama}\nSteamHex : ${anggotaData.steamhex}\nNomor HP : ${anggotaData.nomorhp}\nPosisi : ${anggotaData.nomorhp}\nDiscord ID : <@${anggotaData.discordid}>`
+          `Berikut adalah informasi anggota **${nama}**\nNama Ic : ${anggotaData.nama}\nSteamHex : ${anggotaData.steamhex}\nNomor HP : ${anggotaData.nomorhp}\nPosisi : ${anggotaData.posisi}\nDiscord ID : <@${anggotaData.discordid}>`
         )
         .setColor("ffffff")
         .setTimestamp(Date.now())

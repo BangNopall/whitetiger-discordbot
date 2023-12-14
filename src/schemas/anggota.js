@@ -5,6 +5,7 @@ const anggotaSchema = new Schema({
     steamhex: String,
     nomorhp: String,
     posisi: String,
+    foto: String,
     discordid: String,
 })
 

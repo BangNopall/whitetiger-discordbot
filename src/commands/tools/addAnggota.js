@@ -24,10 +24,325 @@ module.exports = {
 
   async execute(interaction, client) {
     if (interaction.member.roles.cache.has("1177816855285600296")) {
-      const modal = new ModalBuilder()
+      const modalketua = new ModalBuilder()
+        .setCustomId("ketua")
+        .setTitle(`Tambah anggota baru`);
+      const modalwakil = new ModalBuilder()
+        .setCustomId("wakil")
+        .setTitle(`Tambah anggota baru`);
+      const modalbisnis = new ModalBuilder()
+        .setCustomId("bisnis")
+        .setTitle(`Tambah anggota baru`);
+      const modalbrankas = new ModalBuilder()
+        .setCustomId("brankas")
+        .setTitle(`Tambah anggota baru`);
+      const modaljalanan = new ModalBuilder()
+        .setCustomId("jalanan")
+        .setTitle(`Tambah anggota baru`);
+      const modalhr = new ModalBuilder()
+        .setCustomId("hr")
+        .setTitle(`Tambah anggota baru`);
+      const modalanggota = new ModalBuilder()
         .setCustomId("anggota")
         .setTitle(`Tambah anggota baru`);
-      modal.addComponents(
+      const modalrelasi = new ModalBuilder()
+        .setCustomId("relasi")
+        .setTitle(`Tambah anggota baru`);
+      modalketua.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modalwakil.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modalbisnis.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modalbrankas.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modaljalanan.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modalhr.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modalanggota.addComponents(
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nama")
+              .setLabel("Nama IC")
+              .setPlaceholder("Masukan nama IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("steamhex")
+              .setLabel("SteamHex")
+              .setPlaceholder("Masukan steamhex")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("nohpic")
+              .setLabel("Nomor Hp IC")
+              .setPlaceholder("Masukan Nomor HP IC")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        }),
+        new ActionRowBuilder({
+          components: [
+            new TextInputBuilder()
+              .setCustomId("discordid")
+              .setLabel("Discord ID")
+              .setPlaceholder("Masukan Discord ID")
+              .setRequired(true)
+              .setStyle(TextInputStyle.Short),
+          ],
+        })
+      );
+      modalrelasi.addComponents(
         new ActionRowBuilder({
           components: [
             new TextInputBuilder()
@@ -143,42 +458,33 @@ module.exports = {
         if (interaction.member.roles.cache.has("1155443652911452252")) {
           switch (selectedOption) {
             case "ketua":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalketua);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerKetua = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "ketua") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
                   const nohpic = interaction.fields.getTextInputValue("nohpic");
                   const discordid = interaction.fields.getTextInputValue("discordid");
                   const posisi = selectedOption;
+
                   const anggota = new AnggotaModel({
                     _id: new mongoose.Types.ObjectId(),
                     nama,
                     steamhex,
                     nomorhp: nohpic,
+                    foto: "-",
                     posisi,
-                    discordid,
+                    discordid
                   });
 
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -196,18 +502,32 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerKetua);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerKetua);
               break;
             case "wakil ketua":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalwakil);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerWakil = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "wakil") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
@@ -227,19 +547,8 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -257,18 +566,32 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerWakil);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerWakil);
               break;
             case "PJ Bisnis":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalbisnis);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerBisnis = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "bisnis") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
@@ -288,19 +611,8 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -318,18 +630,32 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerBisnis);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerBisnis);
               break;
             case "PJ Brankas":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalbrankas);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerBrankas = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "brankas") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
@@ -349,19 +675,8 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -379,18 +694,32 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerBrankas);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerBrankas);
               break;
             case "PJ Jalanan":
-              await interaction.showModal(modal);
+              await interaction.showModal(modaljalanan);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerJalanan = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "jalanan") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
@@ -410,19 +739,8 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -440,18 +758,32 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerJalanan);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerJalanan);
               break;
             case "PJ Relasi":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalhr);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerHr = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "hr") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
@@ -471,19 +803,8 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -501,16 +822,30 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerHr);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerHr);
               break;
             case "Anggota":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalanggota);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerAnggota = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
                 if (interaction.customId === "anggota") {
                   const nama = interaction.fields.getTextInputValue("nama");
@@ -532,19 +867,8 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
+                    
+                    const embed = new EmbedBuilder()
                     .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
@@ -562,18 +886,32 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerAnggota);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerAnggota);
               break;
             case "Relasi":
-              await interaction.showModal(modal);
+              await interaction.showModal(modalrelasi);
               // Jika modal di submit, maka tampilkan embed
-              client.on(Events.InteractionCreate, async (interaction) => {
+              const interactionHandlerRelasi = async (interaction) => {
                 if (!interaction.isModalSubmit()) return;
-                if (interaction.customId === "anggota") {
+                if (interaction.customId === "relasi") {
                   const nama = interaction.fields.getTextInputValue("nama");
                   const steamhex =
                     interaction.fields.getTextInputValue("steamhex");
@@ -593,20 +931,9 @@ module.exports = {
                   try {
                     await anggota.save();
                     console.log("Data anggota berhasil disimpan ke database.");
-                  } catch (error) {
-                    console.error(
-                      "Gagal menyimpan data anggota ke database:",
-                      error
-                    );
-                    return interaction.reply({
-                      content:
-                        "Terjadi kesalahan saat menyimpan data ke database.",
-                      ephemeral: true,
-                    });
-                  }
-
-                  const embed = new EmbedBuilder()
-                    .setTitle("Relasi baru - White Tiger Pandawa")
+                    
+                    const embed = new EmbedBuilder()
+                    .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
                     Nama Ic: ${nama}\nSteamHex : ${steamhex}\nNomor HP ic: ${nohpic}\nPosisi: ${posisi}\nDiscord ID: ${discordid}
@@ -623,11 +950,25 @@ module.exports = {
                       text: "White Tiger Pandawa",
                     });
 
-                  await interaction.reply({
-                    embeds: [embed],
-                  });
+                    await interaction.reply({
+                      embeds: [embed],
+                    });
+
+                    client.removeListener(Events.InteractionCreate, interactionHandlerRelasi);
+                  } catch (error) {
+                    console.error(
+                      "Gagal menyimpan data anggota ke database:",
+                      error
+                    );
+                    return interaction.reply({
+                      content:
+                        "Terjadi kesalahan saat menyimpan data ke database.",
+                      ephemeral: true,
+                    });
+                  }  
                 }
-              });
+              };
+              client.on(Events.InteractionCreate, interactionHandlerRelasi);
               break;
           }
         } else {
