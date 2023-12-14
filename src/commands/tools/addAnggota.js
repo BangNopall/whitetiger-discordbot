@@ -545,7 +545,7 @@ module.exports = {
                   }
 
                   const embed = new EmbedBuilder()
-                    .setTitle("Anggota baru - White Tiger Pandawa")
+                    .setTitle("Anggota - White Tiger Pandawa")
                     .setDescription(
                       `
                     Nama Ic: ${nama}\nSteamHex : ${steamhex}\nNomor HP ic: ${nohpic}\nPosisi: ${posisi}\nDiscord ID: ${discordid}
