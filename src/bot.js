@@ -36,7 +36,7 @@ for (const folder of functionFolders) {
     require(`./functions/${folder}/${file}`)(client);
 }
 
-client.on(Events.MessageCreate, async (message) => {
+client.on('messageCreate', async (message) => {
   try {
     const data = await Sticky.findOne({ ChannelID: message.channel.id });
     if (!data) return;
