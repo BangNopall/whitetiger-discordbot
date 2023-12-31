@@ -54,11 +54,11 @@ module.exports = {
         text: "White Tiger Sadulur",
       });
 
-      const msg = await interaction.channel.send({embeds: [embed]});
+    const msg = await interaction.channel.send({ embeds: [embed] });
 
     // hanya role tertentu yang dapat mengakses
     if (interaction.member.roles.cache.has("1155443652911452252")) {
-      msg
+      msg;
     } else {
       return interaction.channel.send({
         content: `Maaf, hanya <@&1155443652911452252> yang dapat menggunakan command ini.`,
@@ -66,7 +66,7 @@ module.exports = {
       });
     }
 
-    const interval = setInterval( async () => {
+    const interval = setInterval(async () => {
       const disnakerArray = await Brankas.find({ kategori: "Barang Disnaker" });
       const barhamArray = await Brankas.find({ kategori: "Barang Haram" });
       const senjataArray = await Brankas.find({ kategori: "Senjata" });
@@ -84,6 +84,10 @@ module.exports = {
       const peluruList = peluruArray
         .map((barang) => `> - ${barang.barang} : ${barang.jumlah}`)
         .join("\n");
+      const timestamp = Date.now();
+
+      // Membuat objek Date berdasarkan timestamp
+      const date = new Date(timestamp);
 
       const updatedEmbed = new EmbedBuilder()
         .setTitle("Brankas - White Tiger Sadulur")
@@ -101,7 +105,7 @@ module.exports = {
         .setThumbnail(
           "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&"
         )
-        .setTimestamp(Date.now())
+        .setTimestamp(date)
         .setFooter({
           iconURL:
             "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
@@ -111,7 +115,7 @@ module.exports = {
       if (interaction.member.roles.cache.has("1155443652911452252")) {
         await msg.edit({
           embeds: [updatedEmbed],
-        })
+        });
       }
     }, 5000);
     // hanya role tertentu yang dapat mengakses
