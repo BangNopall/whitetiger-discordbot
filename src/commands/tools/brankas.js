@@ -109,7 +109,7 @@ module.exports = {
         .setFooter({
           iconURL:
             "https://cdn.discordapp.com/attachments/1155437160678314094/1155437850821656596/dtfyguiho.png?ex=656311da&is=65509cda&hm=c30ef98ca6f94f0365a76a98b9f6dae8e57a72ac6cb8d2cb38dca0c05bb7d7c1&",
-          text: "White Tiger Sadulur • Updated setiap 1 menit",
+          text: "White Tiger Sadulur • Updated",
         });
 
       if (interaction.member.roles.cache.has("1155443652911452252")) {
