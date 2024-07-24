@@ -51,7 +51,7 @@ This section lists the main frameworks/libraries used.
 <!-- LICENSE -->
 ## License
 
-WhiteTigerBot © 2023 by Muhammad Naufal is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International. See [`LICENSE`](https://github.com/BangNopall/e-arsip/blob/master/LICENSE) for more information.
+WhiteTigerBot © 2023 by Muhammad Naufal is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International. See [`LICENSE`](https://github.com/BangNopall/whitetiger-discordbot/blob/master/LICENSE) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
