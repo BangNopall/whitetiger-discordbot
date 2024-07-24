@@ -1,5 +1,4 @@
 <a id="readme-top"></a>
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
